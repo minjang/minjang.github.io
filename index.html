@@ -6,14 +6,21 @@ title: Home
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
-    <h1 class="post-title">
+    <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
+    </h2>
+    <div class="post-meta">
+      <span>{{ post.date | date: "%Y년 %-m월 %-d일" }}</span> |
+      {% if post.comments %}
+        <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">
+          <span class="disqus-comment-count" data-disqus-url="{{ post.url | prepend: site.disqus_url }}">댓글 개수 로딩중...</span>
+        </a>
+      {% else %}
+        댓글을 달 수 없습니다
+      {% endif %} 
+    </div>
     {{ post.content }}
   </div>
   {% endfor %}
@@ -21,18 +28,18 @@ title: Home
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
+    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">예전 글</a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+    <span class="pagination-item older">예전 글</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/">최근 글</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">최근 글</a>
     {% endif %}
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <span class="pagination-item newer">최근 글</span>
   {% endif %}
 </div>
 

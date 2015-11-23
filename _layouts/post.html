@@ -3,23 +3,39 @@ layout: default
 ---
 
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
+  <h2 class="post-title">
+    {{ page.title }}
+  </h2>
+
+  <div class="post-meta">
+    <span>{{ page.date | date: "%Y년 %-m월 %-d일" }}</span> |
+    {% if page.comments %}
+      <a href="{{ page.url | prepend: site.baseurl }}#disqus_thread">
+        <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.disqus_url }}">댓글 개수 로딩중...</span>
+      </a>
+    {% else %}
+      댓글을 달 수 없습니다
+    {% endif %}
+  </div>
   {{ content }}
 </div>
 
+{% include comments.html %}
+
+{% if page.related %}
 <div class="related">
-  <h2>Related Posts</h2>
+  <h3>Related Posts</h3>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
       <li>
-        <h3>
+        <h4>
           <a href="{{ site.baseurl }}{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>
-        </h3>
+        </h4>
       </li>
     {% endfor %}
   </ul>
 </div>
+{% endif %}

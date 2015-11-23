@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="sidebar-overlay">
 
     {% include sidebar.html %}
 
@@ -14,8 +14,19 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
           </h3>
+          <div class="h-line"></div>
+          <h4 class="masthead-menu">
+            
+          {% for page in site.pages_list %}
+          &nbsp;&nbsp;
+          <a href="{{ page[1][1] }}">{{ page[1][0] }}</a>
+          <a style="color: #c0c0c0; font-size: 75%; vertical-align: bottom;" href="{{ page[1][1] }}">{{ page[0] }}</a>
+          &nbsp;&nbsp;
+          {% endfor %}
+  
+          </h4>
+          <div class="h-line"></div>
         </div>
       </div>
 
@@ -23,6 +34,13 @@
         {{ content }}
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-copyright">Copyright 2015 Minjang Kim</div>
+      </div>
+    </footer>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
@@ -43,5 +61,8 @@
         }, false);
       })(document);
     </script>
+
+   <script id="dsq-count-scr" src="//{{ site.disqus_shortname }}.disqus.com/count.js" async></script>
+
   </body>
 </html>

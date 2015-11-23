@@ -1,30 +1,25 @@
 ---
 layout: page
-title: About
+title: 소개 | About
+comments: true
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+안녕하세요. 이 블로그에서는 제가 관심있어 하는 컴퓨터 이야기 또는 실리콘밸리 생활 이야기를 합니다. 이 블로그의 의견은 순전히 저의 것이며 저의 전/현직 회사와 무관합니다.
 
-There are currently two themes built on Poole:
+Hello, this is my personal blog mostly about the technologies that I'm interested in. The views on this blog are purely my opinions and do not reflect those of my current and previous employers.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+- 이메일: [minjang.kim@gmail.com](mailto:minjang.kim@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/minjang)
+- [Twitter](https://twitter.com/minjangk)
+- [Stack Overflow](http://stackoverflow.com/users/202699/minjang)
+- [이전 블로그](http://minjang.egloos.com/)
 
-Learn more and contribute on [GitHub](https://github.com/poole).
 
-## Setup
+<div align="right"><small>이 블로그는 <a href="https://github.com/poole/lanyon">Lanyon</a> 기반으로 만들었습니다.</small></div>
 
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+<!-- 기타 참고 사이트:
+https://github.com/thekemkid/thekemkid.github.io
+https://github.com/ankur-gupta/ankur-gupta.github.io
+https://github.com/vCabbage/vcabbage.github.io
+-->

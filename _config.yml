@@ -5,18 +5,33 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Lanyon
-tagline:             'A Jekyll theme'
-description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://lanyon.getpoole.com
+title:               /* the devil is in the detail */
+tagline:             Minjang Kim's blog
+description:         김민장의 개인 블로그 <br/> Minjang Kim's personal blog
+url:                 http://minjang.github.io
 baseurl:             ''
-paginate:            5
+paginate:            1
+disqus_shortname:    minjangkim
+disqus_url:          http://minjangkim.com
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Minjang Kim
+  url:               https://twitter.com/minjangk
+  email:             minjang.kim@gmail.com
 
 # Custom vars
 version:             1.0.0
+
+pages_list:       
+  About: ['소개', '/about']
+  Archive: ['글목록', '/archive']
+  Feed: ['구독', '/atom.xml']
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
