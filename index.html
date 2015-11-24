@@ -12,14 +12,12 @@ title: Home
       </a>
     </h2>
     <div class="post-meta">
-      <span>{{ post.date | date: "%Y년 %-m월 %-d일" }}</span> |
+      <span>{{ post.date | date: "%Y년 %-m월 %-d일" }}</span>
       {% if post.comments %}
-        <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">
+        | <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">
           <span class="disqus-comment-count" data-disqus-url="{{ post.url | prepend: site.disqus_url }}">댓글 개수 로딩중...</span>
         </a>
-      {% else %}
-        댓글을 달 수 없습니다
-      {% endif %} 
+      {% endif %}
     </div>
     {{ post.content }}
   </div>

@@ -8,13 +8,11 @@ layout: default
   </h2>
 
   <div class="post-meta">
-    <span>{{ page.date | date: "%Y년 %-m월 %-d일" }}</span> |
+    <span>{{ page.date | date: "%Y년 %-m월 %-d일" }}</span>
     {% if page.comments %}
-      <a href="{{ page.url | prepend: site.baseurl }}#disqus_thread">
+      | <a href="{{ page.url | prepend: site.baseurl }}#disqus_thread">
         <span class="disqus-comment-count" data-disqus-url="{{ page.url | prepend: site.disqus_url }}">댓글 개수 로딩중...</span>
       </a>
-    {% else %}
-      댓글을 달 수 없습니다
     {% endif %}
   </div>
   {{ content }}
