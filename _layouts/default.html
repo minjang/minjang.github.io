@@ -17,14 +17,11 @@
           </h4>
           <div class="h-line"></div>
           <h4 class="masthead-menu">
-            
           {% for page in site.pages_list %}
-          &nbsp;&nbsp;
-          <a href="{{ page[1][1] }}">{{ page[1][0] }}</a>
-          <a style="color: #c0c0c0; font-size: 75%; vertical-align: bottom;" href="{{ page[1][1] }}">{{ page[0] }}</a>
-          &nbsp;&nbsp;
+            <a href="{{ page[1][1] }}">{{ page[1][0] }}</a>
+            <a style="color: #c0c0c0; font-size: 75%; vertical-align: bottom;" href="{{ page[1][1] }}">{{ page[0] }}</a>
+            &nbsp;&nbsp;
           {% endfor %}
-  
           </h4>
           <div class="h-line"></div>
         </div>
@@ -39,7 +36,7 @@
         <div class="container">
           <div class="footer-copyright">Copyright 2015 Minjang Kim</div>
         </div>
-      </footer>      
+      </footer>
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
