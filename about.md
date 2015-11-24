@@ -9,7 +9,7 @@ comments: true
 
 Hello, this is my personal blog mostly about the technologies that I'm interested in. The views on this blog are purely my opinions and do not reflect those of my current and previous employers.
 
-- 이메일: [minjang.kim@gmail.com](mailto:minjang.kim@gmail.com)
+- [minjang.kim@gmail.com](mailto:minjang.kim@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/minjang)
 - [Twitter](https://twitter.com/minjangk)
 - [Stack Overflow](http://stackoverflow.com/users/202699/minjang)
