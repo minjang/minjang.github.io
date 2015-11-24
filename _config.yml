@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:               /* the devil is in the detail */
 tagline:             Minjang Kim's blog
-description:         김민장의 개인 블로그 <br/> Minjang Kim's personal blog
+description:         김민장의 블로그 <br/> Minjang Kim's blog
 url:                 http://minjang.github.io
 baseurl:             ''
 paginate:            1
@@ -20,6 +20,9 @@ author:
   url:               https://twitter.com/minjangk
   email:             minjang.kim@gmail.com
 
+github:
+  repo:              'https://github.com/minjang/minjang.github.io'
+
 # Custom vars
 version:             1.0.0
 
@@ -29,8 +32,7 @@ pages_list:
   Feed: ['구독', '/atom.xml']
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
