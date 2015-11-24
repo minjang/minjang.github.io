@@ -365,9 +365,12 @@ a.sidebar-nav-item:focus {
 }
 
 /* Meta data line below post title */
-.post-meta,
-.post-meta a {
+.post-meta {
   margin-bottom: 1rem;
+  margin-top: -0.5rem;
+  color: #808080;
+}
+.post-meta a {
   color: #808080;
 }
 
