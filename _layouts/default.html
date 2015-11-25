@@ -12,17 +12,18 @@
     <div class="wrap">
       <div class="masthead">
         <div class="container">
-          <h4 class="masthead-title">
+          <div class="masthead-title">
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-          </h4>
+          </div>
           <div class="h-line"></div>
-          <h4 class="masthead-menu">
+          <div class="masthead-menu">
+          &nbsp;&nbsp;
           {% for page in site.pages_list %}
             <a href="{{ page[1][1] }}">{{ page[1][0] }}</a>
             <a style="color: #c0c0c0; font-size: 75%; vertical-align: bottom;" href="{{ page[1][1] }}">{{ page[0] }}</a>
             &nbsp;&nbsp;
           {% endfor %}
-          </h4>
+          </div>
           <div class="h-line"></div>
         </div>
       </div>

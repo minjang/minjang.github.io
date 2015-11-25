@@ -44,7 +44,7 @@ html {
   font-family: "Helvetica Neue", "Nanum Gothic", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
-@media (min-width: 38em) {
+@media (min-width: 36em) {
   html {
     font-size: 16px;
   }
@@ -63,7 +63,7 @@ ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-  
+
 /*
  * Wrapper
  *
@@ -85,16 +85,21 @@ ul, ol, dl {
  */
 
 .container {
-  max-width: 36rem; /* 28rem; */
+  max-width: 36rem;
 }
 @media (min-width: 44em) {
   .container {
-    max-width: 40rem; /* 32rem; */
+    max-width: 40rem;
   }
 }
-@media (min-width: 56em) {
+@media (min-width: 48em) {
   .container {
-    max-width: 42rem; /* 38rem; */
+    max-width: 44rem;
+  }
+}
+@media (min-width: 52em) {
+  .container {
+    max-width: 48rem;
   }
 }
 
@@ -105,7 +110,7 @@ ul, ol, dl {
   opacity: 0.85;
   width: 100%;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;  
+  margin-bottom: 0.5rem;
 }
 
 /*
@@ -349,7 +354,7 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 /* Blog post or page title */
