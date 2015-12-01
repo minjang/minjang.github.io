@@ -1,7 +1,6 @@
 # Dependencies
 markdown:       kramdown
 highlighter:    pygments
-pygments_options: ['lineanchors']
 
 # kramdown:
 # fenced_code_blocks: true
