@@ -1,12 +1,12 @@
 .highlight  { background: #ffffff; }
-.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .c { color: #999988; font-style: normal } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { color: #a71d5d; font-weight: normal } /* Keyword */
 .highlight .o { font-weight: normal } /* Operator */
-.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cm { color: #999988; font-style: normal } /* Comment.Multiline */
 .highlight .cp { color: #999999; font-weight: normal } /* Comment.Preproc */
-.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #999999; font-weight: normal; font-style: italic } /* Comment.Special */
+.highlight .c1 { color: #999988; font-style: normal } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: normal; font-style: normal } /* Comment.Special */
 .highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
 .highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
 .highlight .ge { font-style: italic } /* Generic.Emph */
@@ -59,3 +59,55 @@
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 .highlight .kn { color: #a71d5d } /* E.g., python's from, import etc. */
+
+
+pre {
+    counter-reset: line-numbering;
+    /*border: solid 1px #d9d9d9;*/
+    /*border-radius: 0;*/
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 1.5;
+    /*margin-bottom: 30px;*/
+    white-space: pre;
+    overflow-x: auto;
+    word-break: inherit;
+    word-wrap: inherit;
+}
+
+pre a::before {
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
+  width: 14px;
+  text-align: right;
+  display: inline-block;
+  color: rgba(0, 0, 0, .3);
+  background: #fff;
+  margin-right: 10px;
+  border-right: 1px solid #eee;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+pre a:first-of-type::before {
+  padding-top: 1px;
+}
+pre a:last-of-type::before {
+  padding-bottom: 1px;
+}
+pre a:only-of-type::before {
+  padding: 8px;
+}
+pre a:nth-of-type(100)::before {
+  text-align: left;
+}
