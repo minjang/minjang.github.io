@@ -170,6 +170,34 @@ ul, ol, dl {
 }
 
 /*
+ * minjang: CSS override for syntax highlight
+ */
+
+table.highlighttable {
+  overflow-x: auto;
+  display: block;
+  border-radius: 3px;
+}
+table.highlighttable td.code {
+  width:100%;
+  border: 0px;
+}
+table.highlighttable td.linenos {
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+  color: rgba(0, 0, 0, .3);
+}
+table.highlighttable pre {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  white-space: pre;
+}
+table.highlighttable div.highlight {
+  margin-bottom: 0rem;
+}
+
+/*
  * Sidebar
  *
  * The sidebar is the drawer, the item we are toggling with our handy hamburger
