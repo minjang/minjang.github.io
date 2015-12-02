@@ -28,7 +28,7 @@ title: 블로그 이전
 
 Disqus 댓글 플러그인 설치가 생각보다 까다로웠다. 지킬 테마 중 바로 Disqus를 지원하는 것도 있으나 Poole/Lanyon은 그렇지 않다. 괜히 웹 검색에서 다른 누군가가 했던 방법을 따라 하지 말고, 그냥 Disqus [공식 홈페이지가 제시하는 방법](https://disqus.com/admin/universalcode/)을 참고하는 것이 결국 옳았다. 댓글 개수 표시하는 방법도 [공식 홈페이지](https://help.disqus.com/customer/portal/articles/565624-adding-comment-count-links-to-your-home-page)를 차근차근 따라 하면 된다.
 
-Disqus는 URL을 키로 해서 특정 포스트마다 댓글을 달아주는데 이 URL 인식 부분에 세심한 주의가 필요하다. 자꾸만 댓글이 안 뜰 때가 있었는데 알고 보니 `this.page.title = {{page.title}}` 부분에서 제목에 `'`만 있어도 되지 않았다. 삽질할 수 있는 곳이 너무 많았다. 이 블로그의 [소스 코드](https://github.com/minjang/minjang.github.io/blob/master/_includes/comments.html)도 도움이 될 수 있다. 댓글 개수 표시는 포스트 페이지에서는 [이렇게](https://github.com/minjang/minjang.github.io/blob/master/_layouts/post.html#L12), 인덱스 페이지에서는 [이렇게](https://github.com/minjang/minjang.github.io/blob/master/index.html#L16) 했다.
+Disqus는 URL을 키로 해서 특정 포스트마다 댓글을 달아주는데 이 URL 인식 부분에 세심한 주의가 필요하다. 자꾸만 댓글이 안 뜰 때가 있었는데 알고 보니 {%raw%}`this.page.title = {{page.title}}`{%endraw%} 부분에서 제목에 `'`만 있어도 되지 않았다. 삽질할 수 있는 곳이 너무 많았다. 이 블로그의 [소스 코드](https://github.com/minjang/minjang.github.io/blob/master/_includes/comments.html)도 도움이 될 수 있다. 댓글 개수 표시는 포스트 페이지에서는 [이렇게](https://github.com/minjang/minjang.github.io/blob/master/_layouts/post.html#L12), 인덱스 페이지에서는 [이렇게](https://github.com/minjang/minjang.github.io/blob/master/index.html#L16) 했다.
 
 
 ### 구문 강조 기능 손보기
