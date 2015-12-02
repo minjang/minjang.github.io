@@ -38,6 +38,7 @@
 html,
 body {
   overflow-x: hidden;
+  counter-reset: image-caption-numbering;
 }
 
 html {
@@ -185,7 +186,7 @@ table.highlighttable td.code {
 }
 table.highlighttable td.linenos {
   border: 0px;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #eee;
   color: rgba(0, 0, 0, .3);
   background: #fff;
 }
@@ -198,6 +199,22 @@ table.highlighttable pre {
 }
 table.highlighttable div.highlight {
   margin-bottom: 0rem;
+}
+
+.image-wrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.image-caption {
+  font-size: small;
+  margin-top: -.5rem;
+}
+.image-caption:before {
+  content: "그림 " counter(image-caption-numbering) ". ";
+  counter-increment: image-caption-numbering;
+}
+.image-wrapper img {
+  border: 1px solid #ddd;
 }
 
 /*

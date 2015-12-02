@@ -1,3 +1,8 @@
+# https://help.github.com/articles/using-jekyll-with-pages/
+# Github Pages override these options.
+safe: true
+lsi: false
+
 # Dependencies
 markdown:       kramdown
 highlighter:    pygments
