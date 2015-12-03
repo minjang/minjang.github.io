@@ -217,6 +217,15 @@ table.highlighttable div.highlight {
   border: 1px solid #ddd;
 }
 
+.footnotes {
+  font-size: small;
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+}
+.footnotes p {
+  margin-bottom: 0.25rem;
+}
+
 /*
  * Sidebar
  *
