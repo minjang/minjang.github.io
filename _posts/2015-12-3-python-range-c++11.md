@@ -10,6 +10,7 @@ title: C++11으로 파이썬의 range 흉내내기
 파이썬으로 0부터 9까지 숫자를 출력하는 반복문을 쓴다면 아래 같이 파이썬스럽게(Pythonic) 할 수 있다.
 
 {% highlight python %}
+# Python 3
 for n in range(0, 10):
     print(n)
 {% endhighlight %}
@@ -36,7 +37,7 @@ C++에서는 `i`, `j` 같은 변수로 루프를 구성하는 것이 너무 당�
 
 ### C++에서도 비슷하게 할 수 있다
 
-그렇다면 C++에서 파이썬스러운 코드를 작성할 수 있을까? 된다. C++11 부터 추가된 **범위 기반 for 루프** ([range-based for loop](http://en.cppreference.com/w/cpp/language/range-for))로 할 수 있다. 파이썬 처럼 행동하는 `range` C++ 함수와 관련 클래스를 만들 수 있다면 다음과 같은 유도 변수를 드러내지 않는 루프를 만들 수 있다.
+그렇다면 C++에서 파이썬스러운 코드를 작성할 수 있을까? 된다. C++11 부터 추가된 **범위 기반 for 루프**([range-based for loop](http://en.cppreference.com/w/cpp/language/range-for))로 할 수 있다. 파이썬 처럼 행동하는 `range` C++ 함수와 관련 클래스를 만들 수 있다면 다음과 같은 유도 변수를 드러내지 않는 루프를 만들 수 있다.
 
 {% highlight C++ %}
 // Python:
@@ -86,7 +87,7 @@ for (int i : A)
 그렇다면 이 범위 기반 for 루프의 비밀은 무엇인가? 혹시 STL 객체하고만 작동할까? 아니다. 일반 배열도 되므로 이건 아닐 것이다. 답은 의외로 간단하다. 사실 그냥 간편 문법(syntactic sugar)에 지나지 않는다.
 
 
-C++ 표준[^3]에 따르면 범위 기반 for 루프 문법은
+<a name="range-for-definition"></a>C++ 표준에[^3] 따르면 범위 기반 for 루프 문법은
 
 <p><div class="highlight"><pre style="padding: .25rem .5rem; word-break: break-all; word-wrap: break-word;">
 for ( <span class="k"><i>for-range-declaration</i></span> : <span class="k"><i>for-range-initializer</i></span> ) <span class="k"><i>statement</i></span>
@@ -197,6 +198,7 @@ public:
 template<typename T>
 class range_iterator {
   T cur_;
+  const T step_ = 1;
 
 public:
   range_iterator(T init) : cur_{init} {}
@@ -243,8 +245,7 @@ for (double i : range(7.5, 9.5))
 8.5
 {% endhighlight %}
 
-다시 말하지만 이건 최소한의 구현이다. 개선한다면 구현체를 별도의 `namespace`로 두면 좋을 것이고 `range_iterator`를 `range_iter`의 중첩 클래스로 하는 것도 좋다. `range_iter` 생성자를 `private`로 막고 `friend`
- 함수 권한을 `range` 함수에 주는 것도 필요하다.
+다시 말하지만 이건 최소한의 구현이다. 개선한다면 구현체를 별도의 `namespace`로 두어 감추면 좋을 것이고, `range_iterator`를 `range_iter`의 중첩 클래스로 하는 것도 좋다. `range_impl` 생성자를 `private`로 막고 `friend` 함수 권한을 `range` 함수에 주는 것도 필요할 것이다.
 
 
 ### 결론
@@ -261,4 +262,4 @@ C++11부터 시작된 현대 C++의 새로운 기능으로 파이썬, 루비 같
 [^1]: 어떨 때는 아예 `for` 루프 자체를 감춰버리는 [std::accumulate](http://en.cppreference.com/w/cpp/algorithm/accumulate) 같은 알고리즘을 쓸 수도 있다.
 [^2]: 하지만 이 블로그의 제목처럼 악마는 디테일에 있다고 범위 기반 for 루프에서 실수를 저지를 수도 있다. 이 이야기는 나중에 기회가 되면 하고 관심있는 독자는 [이 글](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2014/n3853.htm)을 읽어 보길 바란다.
 [^3]: 2015년 12월 현재 진행중인 최신 C++17 [N4567](https://github.com/cplusplus/draft/blob/master/papers/n4567.pdf) § 6.5.4에서 가져왔고 색상 강조는 직접한 것. C++11의 표준 문서인 [N3376](https://github.com/cplusplus/draft/blob/master/papers/N3376.pdf)과 C++14 [N4140](https://github.com/cplusplus/draft/blob/master/papers/n4140.pdf)과 약간의 서술 차이가 있긴 하다.
-[^4]: `auto && __range`에서 `&&`는 우측값 참조가 아닌 _만능_ 참조, [universal reference](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)이다. C++17에서는 이를 _전달_ 참조, [forwarding reference](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4164.pdf)로 부른다. 만능/전달 참조 번역은 필자 맘대로 한 것이므로 주의할 것!
+[^4]: `auto && __range`에서 `&&`는 우측값 참조가 아닌 유니버셜 레퍼런스, [universal reference](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)이다. C++17에서는 이를 포워딩 레퍼런스, [forwarding reference](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4164.pdf)로 부른다. 필자 맘대로 이들을 번역한다면 _만능_ 참조자와 _전달_ 참조자로 번역할 것 같다.
