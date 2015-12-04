@@ -182,20 +182,20 @@ table.highlighttable {
 table.highlighttable td.code {
   width:100%;
   border: 0px;
-  background: #fff;
+  background: #f9f9f9;
 }
 table.highlighttable td.linenos {
   border: 0px;
   border-right: 1px solid #eee;
   color: rgba(0, 0, 0, .3);
-  background: #fff;
+  background: #f9f9f9;
 }
 table.highlighttable pre {
   border: 0px;
   padding: 0px;
   margin: 0px;
   white-space: pre;
-  background: #fff;
+  background: #f9f9f9;
 }
 table.highlighttable div.highlight {
   margin-bottom: 0rem;
