@@ -226,6 +226,12 @@ table.highlighttable div.highlight {
   margin-bottom: 0.25rem;
 }
 
+.engterm {
+  font-size: small;
+  color: #808080;
+  vertical-align: top;
+}
+
 /*
  * Sidebar
  *
