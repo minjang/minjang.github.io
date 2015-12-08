@@ -5,6 +5,7 @@ title: C++11으로 파이썬의 range 흉내내기
 
 이른바 현대 C++, 다시 말해 C++11부터 시작하여 C++14, C++17를 포함하는 C++은 과거 C++98/03에 비해 새로운 기능이 많이 추가되어 거의 새로운 언어가 되었다. 덕분에 파이썬 같은 언어에서나 가능했던 표현도 C++에서 이제 가능하게 되었다. 앞으로 두세 차례의 포스팅에 걸쳐 파이썬 반복 구조 중 일부를 현대 C++로 만들어 보고자 한다.[^terms]
 
+
 ### 파이썬의 유도 변수 없는 for 루프
 
 파이썬으로 0부터 9까지 숫자를 출력하는 반복문을 쓴다면 아래 같이 파이썬스럽게(Pythonic) 할 수 있다.
@@ -232,17 +233,19 @@ range_impl<T> range(const T start, const T stop) {
 실제 사용 예는 이러하다.
 
 {% highlight C++ linenos=table %}
-for (int i : range(1, 3))
+for (int i : range(1, 4))
   cout << i << '\n';
-for (double i : range(7.5, 9.5))
+for (double i : range(7.5, 10.5))
   cout << i << '\n';
 {% endhighlight %}
 
 {% highlight bash %}
 1
 2
+3
 7.5
 8.5
+9.5
 {% endhighlight %}
 
 다시 말하지만 이건 최소한의 구현이다. 개선한다면 구현체를 별도의 `namespace`로 두어 감추면 좋을 것이고, `range_iterator`를 `range_iter`의 중첩 클래스로 하는 것도 좋다. `range_impl` 생성자를 `private`로 막고 `friend` 함수 권한을 `range` 함수에 주는 것도 필요할 것이다.
@@ -251,6 +254,8 @@ for (double i : range(7.5, 9.5))
 ### 결론
 
 C++11부터 시작된 현대 C++의 새로운 기능으로 파이썬, 루비 같은 언어에서나 가능했던 표기도 점점 가능해지고 있다. 파이썬의 `range` 함수를 예제로 왜 유도 변수를 직접 쓰지 않는 루프가 좋은지 먼저 이야기했다. 그리고 C++11의 범위 기반 for 루프로 이를 구현해보았다. 표준 문서에 근거해 범위 기반 루프가 어떻게 정의되는지를 알고 나니 구현은 뜻밖에 간단하였다.
+
+- 이 포스팅의 최종 예제 파일은 [여기](/assets/2015/python_like_range.cpp)서 다운로드 받거나 [여기](https://gist.github.com/minjang/12df1b138d30a28b6703)서 볼 수 있다. 컴파일은 C++11 옵션만 주면 된다.
 
 #### 더 생각해볼 문제
 
