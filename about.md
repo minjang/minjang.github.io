@@ -13,7 +13,8 @@ Hello, this is my personal blog mostly about the technologies that I'm intereste
 - [LinkedIn](https://www.linkedin.com/in/minjang)
 - [Twitter](https://twitter.com/minjangk)
 - [Stack Overflow](http://stackoverflow.com/users/202699/minjang)
-- [이전 블로그](http://minjang.egloos.com/)
+- [옛날 블로그](http://minjang.egloos.com/)
+- [Google Scholar](https://scholar.google.com/citations?user=NT-ol_MAAAAJ&hl=en&oi=ao) (No more research...)
 
 
 <div align="right"><small>이 블로그는 <a href="https://github.com/poole/lanyon">Lanyon</a> 기반으로 만들었습니다.</small></div>
