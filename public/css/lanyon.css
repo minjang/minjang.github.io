@@ -39,6 +39,7 @@ html,
 body {
   overflow-x: hidden;
   counter-reset: image-caption-numbering;
+  counter-reset: code-caption-numbering;
 }
 
 html {
@@ -103,7 +104,11 @@ ul, ol, dl {
     max-width: 48rem;
   }
 }
-
+@media (min-width: 56em) {
+  .container {
+    max-width: 52rem;
+  }
+}
 .h-line {
   background: #DADADA;
   height: 1px;
@@ -206,7 +211,7 @@ table.highlighttable div.highlight {
   margin-bottom: 1rem;
 }
 .image-caption {
-  font-size: small;
+  font-size: 90%;
   margin-top: -.5rem;
 }
 .image-caption:before {
@@ -215,6 +220,21 @@ table.highlighttable div.highlight {
 }
 .image-wrapper img {
   border: 1px solid #ddd;
+}
+
+.code-wrapper {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.code-caption {
+  font-size: 90%;
+  margin-top: -.5rem;
+}
+.code-caption:before {
+  font-weight: bold;
+  content: "코드 " counter(code-caption-numbering) ". ";
+  counter-increment: code-caption-numbering;
+  padding-left: 0.5rem;
 }
 
 .footnotes {

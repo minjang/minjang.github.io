@@ -13,7 +13,7 @@ public:
     return *this;
   }
 
-  bool operator!=(const range_iterator<T> &rhs) const {
+  bool operator!=(const range_iterator<T>& rhs) const {
     return cur_ != rhs.cur_;
   }
 
