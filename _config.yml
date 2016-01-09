@@ -40,7 +40,7 @@ version:             1.0.0
 pages_list:
   About: ['소개', '/about']
   Archive: ['글목록', '/archive']
-  Feed: ['구독', '/atom.xml']
+  Feed: ['구독', '/feed.xml']
 
 gems:
   - jekyll-gist
