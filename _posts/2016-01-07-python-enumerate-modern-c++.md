@@ -752,6 +752,8 @@ enumerate_impl<C> enumerate(C&& container, size_t start = 0) {
 
 코드는 [여기에서](/assets/2016/python_like_enumerate/python_like.cpp) 받아 볼 수 있고 온라인 실행도 [할 수 있다](http://coliru.stacked-crooked.com/a/9c0ff54963ef1c11).
 
+- 주의: g++ 4.8에서는 컴파일 오류가 납니다. `enumerate_impl::container_`를 생성자에서 초기화 할 때 `{...}`가 아닌 `(...)`로 바꾸면 됩니다. 김중이님께서 알려주셨습니다. 감사합니다. 이것은 g++ 4.8까지의 [컴파일러 버그]((http://stackoverflow.com/questions/10509603/why-cant-i-initialize-a-reference-in-an-initializer-list-with-uniform-initializ/10509813))입니다. 심지어 C++11의 [버그](http://open-std.org/JTC1/SC22/WG21/docs/cwg_defects.html#1288)이기도 했습니다. clang 3.7 또는 g++ 4.9 이상은 괜찮습니다. Visual Studio 2015에서도 제대로 됩니다.
+
 `enumerate`를 이리저리 시도해보면서 코딩하면 제대로 작동하는 코드를 아주 어렵지 않게 찾을 수는 있다. 문제는 "어 되네? 왜 되는 거지? 이건 또 왜 안 되지?" 라는 의문이 그대로 남았다는 것. 코딩 도중 컴파일 오류가 나도 그 의미를 완전히 이해하지 못 했다. 이 글을 쓰면서 비로소 모든 과정을 이해하려고 했고 그 결과 이렇게 긴 글이 나오고 말았다.
 
 현대 C++는 많은 분에게 고통을 안겨준다. 하지만 어려운 점이 있으니 배우는 묘미도 있는 법이다. 이해하기 어렵더라도 치밀하게 설계된 표준에 경외감을 표한다.
