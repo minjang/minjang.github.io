@@ -419,6 +419,8 @@ public:
 
 라인 25의 `operator*`가 비로소 프로그래머가 만나게 될 `pair<size_t, ElemType>`를 만든다. 라인 26 처럼 입력 컨테이너 반복자(iterator) `it_`에 `*` 연산자를 호출해 원소에 대한 참조자 또는 상수 참조자를 얻는다.
 
+<a name="detail1"></a>
+
 > 디테일한 이야기 하나: 지금까지 반복자의 `*` 연산자가 참조자를 반환한다고 가정을 했다. C++14 표준(§24.2.2)은 `iterator`의 요구 조건으로 `*` 연산은 명시하는데, 반환형은 정하지 않는다(unspecified). 이미 테스트 케이스 4처럼 `range`가 참조자가 아닌 값을 반환한 것을 보았다. 엄밀히 말하자면 `pair<size_t, ElemType>`에서 `ElemType`은 참조자 형이 아니라 "입력 컨테이너 반복자의 `*` 연산자가 반환하는 타입"으로 정의할 수 있다.
 
 `IterType` 타입을 이제 제대로 따져보자. `IterType`은 `enumerate_impl::begin/end`로부터 `std::begin/end`의 반환형과 같고, 결과적으로 `vector<string>::begin/end`의 반환형이 된다.
