@@ -34,7 +34,7 @@ $ python3
 
 아마도 가장 기본적인 예는 아래처럼 될 것이고 출력도 파이썬의 결과와 같을 것이다.
 
-{% highlight C++ linenos=table%}
+{% highlight C++ linenos %}
 std::vector<std::string> A = {"foo", "bar"};
 // 유도 변수를 이용한 방법
 // for (size_t i = 0; i < A.size(); ++i)
@@ -680,29 +680,26 @@ enumerate_impl<C> enumerate(C&& container, size_t start = 0) {
 
 마지막으로 `enumerate_impl` 구현을 손봐야한다. 클래스 멤버 변수로 `C& container_`를 가졌는데 `C`가 포워딩 레퍼런스가 되었으니 관련된 부분을 고쳐야 한다. 수정한 부분을 볼드체로 강조했다.
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="language-c--" data-lang="c++"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-</code></pre></div></td><td class="code"><div class="highlight"><pre><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">C</span> <span class="cm">/* 컨테이너 타입 */</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="nc">enumerate_impl</span> <span class="p">{</span>
-  <span class="n" style="color: darkred; font-weight: bold">C</span> <span class="n" style="color: darkred; font-weight: bold">container_</span><span class="p">;  </span><span class="c1">// 좌측값일 때는 C&, 우측값일 때는 C로 됨</span>
-  <span class="k">const</span> <span class="kt">size_t</span> <span class="n">start_</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">C</span> <span class="cm">/* 컨테이너 타입 */</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">enumerate</span><span class="n">_impl</span> <span class="p">{</span>
+  <span class="n" style="color: darkred; font-weight: bold">C container_</span><span class="p">;</span>  <span class="c1">// 좌측값일 때는 C&amp;, 우측값일 때는 C로 됨
+</span>  <span class="k">const</span> <span class="kt">size_t</span> <span class="n">start_</span><span class="p">;</span>
 
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">enumerate_impl</span><span class="p">(</span><span class="n"  style="color: darkred; font-weight: bold">C&amp;&amp; container</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">start</span><span class="p">)</span> <span class="o">:</span>
-    <span class="n">container_</span><span class="p">{</span><span class="n"  style="color: darkred; font-weight: bold">std::forward&lt;C&gt;(container)}</span>, <span class="n">start_</span><span class="p">{</span><span class="n">start</span><span class="p">}</span> <span class="p">{}</span>
+  <span class="n">enumerate_impl</span><span class="p">(</span><span class="n" style="color: darkred; font-weight: bold">C&amp;&amp; container</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">start</span><span class="p">)</span> <span class="o">:</span>
+    <span class="n">container_</span><span class="p">{</span><span class="n" style="color: darkred; font-weight: bold">std::forward&lt;C&gt;(container)}</span>, <span class="n">start_</span><span class="p">{</span><span class="n">start</span><span class="p">}</span> <span class="p">{}</span>
 
-  <span class="c1">// 이전 코드와 같음...</span>
-</pre></div>
-</td></tr></table>
-
+<span class="cm">// 이전 코드와 같음 ...</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 {% include code_caption.html caption="포워딩 레퍼런스를 고려한 enumerate_impl 구현" %}
 
 사용자가 `enumerate`를 좌측값 또는 우측값으로 사용할 때를 생각하자. 코드 15의 예와 정확하게 같게 작동한다.

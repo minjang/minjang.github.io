@@ -4,17 +4,12 @@ safe: true
 lsi: false
 
 # Dependencies
-markdown:       kramdown
-highlighter:    pygments
-
-# kramdown:
-# fenced_code_blocks: true
+markdown:     kramdown
+highlighter:  rouge
 
 # Permalinks
 #
-# Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               /* the devil is in the detail */
@@ -44,6 +39,7 @@ pages_list:
 
 gems:
   - jekyll-gist
+  - jekyll-paginate
 
 defaults:
   - scope:
