@@ -176,34 +176,40 @@ ul, ol, dl {
 }
 
 /*
- * minjang: CSS override for syntax highlight
+ * minjang: CSS override for the Rouge syntax highlight
  */
-
-table.highlighttable {
-  overflow-x: auto;
-  display: block;
-  border-radius: 3px;
+td.code {
+  border: 0rem;
 }
-table.highlighttable td.code {
-  width:100%;
-  border: 0px;
-  background: #f9f9f9;
+td.code pre {
+  border: 0rem;
+  margin-left: -.25rem;
 }
-table.highlighttable td.linenos {
-  border: 0px;
+td.gutter.gl {
+  border: 0rem;
   border-right: 1px solid #eee;
+  padding-left: 0rem;
+}
+pre.lineno {
+  border: 0rem;
+  padding: 0rem;
+  margin-left: -.25rem;
   color: rgba(0, 0, 0, .3);
-  background: #f9f9f9;
 }
-table.highlighttable pre {
+pre code table {
   border: 0px;
-  padding: 0px;
-  margin: 0px;
-  white-space: pre;
-  background: #f9f9f9;
-}
-table.highlighttable div.highlight {
   margin-bottom: 0rem;
+}
+pre code pre {
+  font-size: 100%;
+}
+figure.highlight pre {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+} 
+figure.highlight {
+  margin-left: 0rem;
+  margin-right: 0rem;
 }
 
 .image-wrapper {
