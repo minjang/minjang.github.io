@@ -132,7 +132,7 @@ ul, ol, dl {
   /* border-bottom: 1px solid #eee; */
 }
 .masthead-title {
-  font-family: Inconsolata;
+  font-family: Inconsolata, Consolas, Courier New;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
@@ -168,7 +168,7 @@ ul, ol, dl {
 
 .footer-copyright {
   font-size: 75%;
-  font-family: Inconsolata;
+  font-family: Inconsolata, Consolas, Courier New;
   text-align: center;
   color: #c0c0c0;
   padding-top: 1rem;
