@@ -226,8 +226,8 @@ auto map(C&& c, F f) {
 
 {% highlight C++ linenos %}
 // val f = "hello".groupBy(e => e).map(p => (p._1, p._2.length))
-auto f = fun::map(fun::groupBy(string("Hello"), [](auto x) { return x; }),
-              [](auto e) { return make_pair(e.first, e.second.size()); });
+auto f = fun::map(fun::groupBy(string("Hello"), [](auto e) { return e; }),
+              [](auto p) { return make_pair(p.first, p.second.size()); });
 for (auto e : f)
   std::cout << e << std::endl;
 {% endhighlight %}
