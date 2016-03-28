@@ -13,13 +13,13 @@ permalink:           pretty
 
 # Setup
 title:               /* the devil is in the detail */
-tagline:             Minjang Kim's blog
-description:         김민장의 블로그 <br/> Minjang Kim's blog
+tagline:             Minjang Kim's blog (김민장의 블로그)
+description:         김민장의 블로그 | Minjang Kim's Blog
 url:                 http://minjang.github.io
 baseurl:             ''
 paginate:            1
 disqus_shortname:    minjangkim
-disqus_url:          http://minjangkim.com
+disqus_url:          http://minjang.github.io
 
 # About/contact
 author:
