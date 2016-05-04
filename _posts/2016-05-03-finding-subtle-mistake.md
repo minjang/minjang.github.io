@@ -31,7 +31,7 @@ title: 사소해 보이는 연산 뒤에 숨어있는 것
 Node* next(Node* node) {
   if (node == NULL) return NULL;
   if (node->right != NULL) {
-    return findMinimum(node);
+    return findMinimum(node->right);
   } else {
       Node* parent = node->parent;
       while (parent != NULL && parent->value < node->value)
@@ -66,7 +66,7 @@ Node* next(Node* node) {
 Node* next(Node* node) {
   if (node == NULL) return NULL;
   if (node->right != NULL) {
-    return findMinimum(node);
+    return findMinimum(node->right);
   } else {
       Node* parent = node->parent;
       while (parent != NULL && parent->right == node)
