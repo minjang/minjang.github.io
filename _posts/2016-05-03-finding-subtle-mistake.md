@@ -69,9 +69,11 @@ Node* next(Node* node) {
     return findMinimum(node->right);
   } else {
       Node* parent = node->parent;
-      while (parent != NULL && parent->right == node)
+      while (parent != NULL && parent->right == node) {
       //                       ~~~~~~~~~~~~~~~~~~~~~
+        node = parent;
         parent = parent->parent;
+      }
       return parent;
   }
 }
