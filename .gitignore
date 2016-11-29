@@ -40,10 +40,13 @@ validation-report.json
 # Folders to ignore
 node_modules
 bower_components
-assets/2016/python_like_enumerate/CMakeFiles
 cmake_install.cmake
 CMakeCache.txt
-assets/2016/python_like_enumerate/Makefile
-assets/2016/python_like_enumerate/python_like
 Makefile
 a.out
+
+Gemfile
+Gemfile.lock
+.vscode
+
+**/CMakeFiles/**
