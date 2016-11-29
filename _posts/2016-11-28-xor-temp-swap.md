@@ -83,7 +83,7 @@ LLVM에서는 이 과정을 [LLVM 도구](http://llvm.org/docs/CommandGuide/inde
 
 [^ld]: 링커 `ld`를 별도로 실행한다면 옵션을 잘 줘야 링커 에러를 막을 수 있다. `clang -v hello.c`의 출력을 살펴보면 된다.
 
-<img src="/assets/2016/llvm-flow.png">
+{% include image.html img="/assets/2016/llvm-flow.png" stye="border: 0px;"%}
 
 1. `-emit-llvm` 옵션으로 소스 코드를 LLVM IR인 비트코드 파일(.bc)로 변환한다. `llvm-dis`로 사람이 읽을 수 있는 비트코드로 해독할 수 있다.
 2. `opt`는 비트코드 파일을 대상으로 각종 최적화를 할 수 있다. 그림에는 `-O3`처럼 간단히 줬지만 매우 세밀하게 컴파일러 최적화 옵션을 줄 수 있다. 곧 알아볼 것이다.
@@ -185,7 +185,8 @@ $ ./opt swap.bc -mem2reg -inline -mem2reg -o swap.opt.bc && ./llvm-dis swap.opt.
 `xor_swap`의 세 XOR 연산도 이 최적화로 축약이 가능하다. 아래 코드의 주석처럼 차례차례 삭제된다. 디버거로도 이 행동을 정확하게 확인할 수 있다.
 
 <script src="https://gist.github.com/minjang/b4e865dc88e02abe62ad79feff9763cb.js"></script>
-<img src="/assets/2016/instcombine.png">
+{% include image.html img="/assets/2016/instcombine.png" stye="border: 0px;"%}
+
 결과적으로 스왑 함수는 모두 사라지고 변수 `a`, `b`가 최종 사용처에서 필요하다면 직접 바뀐 채로 전달된다. `temp_swap` 또는 `xor_swap`, 수백번을 부르던 아무런 상관이 없다. 홀수 번 불려지면 두 변수가 뒤 바뀌어서, 짝수 번 불려지면 그대로 전달된다.
 [최적화 이전의 코드](https://gist.github.com/minjang/c971d589ab740dfb4f91db728abd7bf8){:target="_blank" __}와 비교하면 그 차이가 확연하다.
 

@@ -5,7 +5,11 @@
     {% else %}
     <a href="{{ include.img }}" title="{{ include.title }}" target="_blank">
     {% endif %}
+    {% if include.stye %}
+        <img src="{{ include.img }}" style="{{ include.stye }}" alt="{{ include.title }}"/>
+    {% else %}
         <img src="{{ include.img }}" alt="{{ include.title }}"/>
+    {% endif %}
     </a>
     {% if include.caption %}
         <div class="image-caption">{{ include.caption }}</div>
