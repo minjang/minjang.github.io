@@ -50,7 +50,7 @@ title: "초등학교 덧셈 알고리즘을 코드로 써보기"
 다이나믹 프로그래밍으로 태깅된 릿코드 문제는 [130개 넘게 있으며](https://leetcode.com/tag/dynamic-programming/), 미국 소프트웨어 개발자들이 꽤 모이는 [블라인드 익명 앱](https://www.teamblind.com/search/dynamic%20programming)에서도 이 문제에 대한 한탄과 고뇌는 흔히 볼 수 있는 주제이다. 여전히 많은 코딩 면접 준비자들이 이걸로 고생하는데 참으로 안타까운 일이다. 나는 과감히 포기할 것을 ~~책임을 지지는 않지만~~ 추천한다. 차라리 다른 기본을 충실히 하는 게 훨씬 좋을 수 있다.
 
 <p align="center">
-<img src="/assets/2019/dp.jpg" style="width: 50%; height: 50%">
+<img src="/assets/2019/dp.JPG" style="width: 50%; height: 50%">
 <small><i>모 회사의 어떤 회의실 이름</i></small>
 </p>
 
